@@ -1,0 +1,91 @@
+flowchart TD
+
+    ROOT["Infrastructure"]
+
+    %% =========================================================
+    %% FME PROJECT
+    %% =========================================================
+    ROOT --> FME["FME Project"]
+
+    %% FME Development
+    FME --> FME_DEV["Development (dev)"]
+    FME_DEV --> FME_DEV_ONPREM["On-premises"]
+    FME_DEV --> FME_DEV_CLOUD["Cloud"]
+
+    FME_DEV_ONPREM --> FME_UBU_DEV_ONPREM["fme-ubu-onprem-dev"]
+    FME_DEV_ONPREM --> FME_UBU_DEV_BK_ONPREM["fme-ubu-onprem-dev-bk"]
+    FME_DEV_ONPREM --> FME_WIN_DEV_ONPREM["fme-win-onprem-dev"]
+    FME_DEV_ONPREM --> FME_WIN_DEV_BK_ONPREM["fme-win-onprem-dev-bk"]
+
+    FME_DEV_CLOUD --> FME_UBU_DEV_CLOUD["fme-ubu-cloud-dev"]
+    FME_DEV_CLOUD --> FME_UBU_DEV_BK_CLOUD["fme-ubu-cloud-dev-bk"]
+    FME_DEV_CLOUD --> FME_WIN_DEV_CLOUD["fme-win-cloud-dev"]
+    FME_DEV_CLOUD --> FME_WIN_DEV_BK_CLOUD["fme-win-cloud-dev-bk"]
+
+    %% FME Staging
+    FME --> FME_STG["Staging (stg)"]
+    FME_STG --> FME_STG_ONPREM["On-premises"]
+    FME_STG --> FME_STG_CLOUD["Cloud"]
+
+    FME_STG_ONPREM --> FME_UBU_STG_ONPREM["fme-ubu-onprem-stg"]
+    FME_STG_ONPREM --> FME_UBU_STG_BK_ONPREM["fme-ubu-onprem-stg-bk"]
+    FME_STG_ONPREM --> FME_WIN_STG_ONPREM["fme-win-onprem-stg"]
+    FME_STG_ONPREM --> FME_WIN_STG_BK_ONPREM["fme-win-onprem-stg-bk"]
+
+    FME_STG_CLOUD --> FME_UBU_STG_CLOUD["fme-ubu-cloud-stg"]
+    FME_STG_CLOUD --> FME_UBU_STG_BK_CLOUD["fme-ubu-cloud-stg-bk"]
+    FME_STG_CLOUD --> FME_WIN_STG_CLOUD["fme-win-cloud-stg"]
+    FME_STG_CLOUD --> FME_WIN_STG_BK_CLOUD["fme-win-cloud-stg-bk"]
+
+    %% FME Production
+    FME --> FME_PRD["Production (prd)"]
+    FME_PRD --> FME_PRD_ONPREM["On-premises"]
+    FME_PRD --> FME_PRD_CLOUD["Cloud"]
+
+    FME_PRD_ONPREM --> FME_UBU_PRD_ONPREM["fme-ubu-onprem-prd"]
+    FME_PRD_ONPREM --> FME_UBU_PRD_BK_ONPREM["fme-ubu-onprem-prd-bk"]
+    FME_PRD_ONPREM --> FME_WIN_PRD_ONPREM["fme-win-onprem-prd"]
+    FME_PRD_ONPREM --> FME_WIN_PRD_BK_ONPREM["fme-win-onprem-prd-bk"]
+
+    FME_PRD_CLOUD --> FME_UBU_PRD_CLOUD["fme-ubu-cloud-prd"]
+    FME_PRD_CLOUD --> FME_UBU_PRD_BK_CLOUD["fme-ubu-cloud-prd-bk"]
+    FME_PRD_CLOUD --> FME_WIN_PRD_CLOUD["fme-win-cloud-prd"]
+    FME_PRD_CLOUD --> FME_WIN_PRD_BK_CLOUD["fme-win-cloud-prd-bk"]
+
+    %% =========================================================
+    %% ARC PROJECT
+    %% =========================================================
+    ROOT --> ARC["ARC Project"]
+
+    %% ARC Development
+    ARC --> ARC_DEV["Development (dev)"]
+    ARC_DEV --> ARC_DEV_ONPREM["On-premises"]
+    ARC_DEV --> ARC_DEV_CLOUD["Cloud"]
+
+    ARC_DEV_ONPREM --> ARC_WIN_DEV_ONPREM["arc-win-onprem-dev"]
+    ARC_DEV_ONPREM --> ARC_WIN_DEV_BK_ONPREM["arc-win-onprem-dev-bk"]
+
+    ARC_DEV_CLOUD --> ARC_WIN_DEV_CLOUD["arc-win-cloud-dev"]
+    ARC_DEV_CLOUD --> ARC_WIN_DEV_BK_CLOUD["arc-win-cloud-dev-bk"]
+
+    %% ARC Staging
+    ARC --> ARC_STG["Staging (stg)"]
+    ARC_STG --> ARC_STG_ONPREM["On-premises"]
+    ARC_STG --> ARC_STG_CLOUD["Cloud"]
+
+    ARC_STG_ONPREM --> ARC_WIN_STG_ONPREM["arc-win-onprem-stg"]
+    ARC_STG_ONPREM --> ARC_WIN_STG_BK_ONPREM["arc-win-onprem-stg-bk"]
+
+    ARC_STG_CLOUD --> ARC_WIN_STG_CLOUD["arc-win-cloud-stg"]
+    ARC_STG_CLOUD --> ARC_WIN_STG_BK_CLOUD["arc-win-cloud-stg-bk"]
+
+    %% ARC Production
+    ARC --> ARC_PRD["Production (prd)"]
+    ARC_PRD --> ARC_PRD_ONPREM["On-premises"]
+    ARC_PRD --> ARC_PRD_CLOUD["Cloud"]
+
+    ARC_PRD_ONPREM --> ARC_WIN_PRD_ONPREM["arc-win-onprem-prd"]
+    ARC_PRD_ONPREM --> ARC_WIN_PRD_BK_ONPREM["arc-win-onprem-prd-bk"]
+
+    ARC_PRD_CLOUD --> ARC_WIN_PRD_CLOUD["arc-win-cloud-prd"]
+    ARC_PRD_CLOUD --> ARC_WIN_PRD_BK_CLOUD["arc-win-cloud-prd-bk"]
